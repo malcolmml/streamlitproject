@@ -89,7 +89,7 @@ def sanitize_input(user_input):
     return sanitized
 
 def get_completion(prompt):
-    llm = ChatOpenAI(ChatOpenAI(openai_api_key=openai_api_key))
+    llm = ChatOpenAI(openai_api_key=openai_api_key)
     response = llm.invoke(prompt)
     return response.content
 
