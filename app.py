@@ -58,15 +58,14 @@ def load_website_content():
 
 st.session_state.content_data = load_website_content()
 
+bto_keywords = ["BTO", "Build-To-Order", "application", "process", "flat", "ballot", "housing"]
+
 def classify_topic(user_input, website_content):
     user_input_lower = user_input.lower()
-    website_content_lower = website_content.lower()
-
-    if user_input_lower in website_content_lower:
+    if any(keyword in user_input_lower for keyword in bto_keywords):
         return "BTO_RELATED"
-    for sentence in website_content.split('.'):
-        if user_input_lower in sentence.lower():
-            return "BTO_RELATED"
+    # The rest of your classification logic
+
 
     prompt = f"""
     Classify the following user input as either 'BTO_RELATED' or 'OFF_TOPIC':
