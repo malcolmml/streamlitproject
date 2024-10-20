@@ -80,7 +80,7 @@ def classify_topic(user_input, website_content):
     return classification
 
 # Access the OpenAI API key
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = st.secrets["general"]["openai_api_key"]
 
 def sanitize_input(user_input):
     sanitized = re.sub(r'ignore .* prompt', '', user_input, flags=re.IGNORECASE)
