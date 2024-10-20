@@ -1,0 +1,10 @@
+# Ignore environment variables
+.env
+
+# Ignore sensitive secrets
+.streamlit/secrets.toml
+
+# Ignore any other unnecessary files
+__pycache__/
+*.pyc
+*.pyo
