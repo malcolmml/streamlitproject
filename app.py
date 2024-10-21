@@ -274,14 +274,14 @@ elif page == "About Me!":
     st.title("Malcolm Ang's Profile")
     st.image("mario.jpg", caption="Malcolm (Zacchaeus) Ang", width=200, use_column_width=False)
 
-    # Professional Overview
-    st.subheader("Professional Overview")
+    # Overview
+    st.subheader("Overview")
     st.write("""
-    Hello, I'm Malcolm (Zacchaeus) Ang, a recent graduate with a Master of Science in Applied Analytics from Columbia University, and I bring over a decade of experience as a Logistics Officer in the Singapore Armed Forces. My journey in logistics and analytics has been both enriching and transformative, as I've had the opportunity to work on complex supply chain challenges in various capacities.
+    Hello, I'm Malcolm Zacchaeus Ang, a recent graduate with a Master of Science in Applied Analytics from Columbia University, and I bring over a decade of experience as a Logistics Officer in the Singapore Armed Forces. My journey in logistics and analytics has been both enriching and transformative, as I've had the opportunity to work on complex supply chain challenges in various capacities.
     """)
 
-    # Professional Experience
-    st.subheader("Professional Experience")
+    # Experience
+    st.subheader("Professional Background")
     st.write("""
     ### Singapore Armed Forces
     As a Logistics Officer for over **10 years**, I have developed expertise in:
