@@ -123,8 +123,8 @@ def get_response(user_input, chat_history, website_content):
         {sanitized_input}
 
         Your response should follow this structure:
-        Direct answer to the query (3-4 sentences)
-        Additional relevant information (4-5 sentences, over 2 paragraphs. use bullet points if it's easier to understand)
+        Direct answer to the query (1-3 sentences)
+        Additional relevant information (2-3 sentences, over 2 paragraphs. use bullet points if it's easier to understand)
         Add table if necessary
         {additional_info_message}
         """
@@ -272,7 +272,7 @@ elif page == "Use Cases":
 # Profile Page
 elif page == "About Me!":
     st.title("Malcolm Ang's Profile")
-    st.image("mario.jpg", caption="Malcolm (Zacchaeus) Ang", width=200, use_column_width=False)
+    st.image("mario.jpg", caption="Malcolm Zacchaeus Ang", width=200, use_column_width=False)
 
     # Overview
     st.subheader("Overview")
