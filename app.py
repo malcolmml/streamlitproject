@@ -41,7 +41,7 @@ with st.expander("IMPORTANT NOTICE"):
     """)
 
 # Create a navigation menu with pages
-page = st.sidebar.radio("Navigation", ["Chat", "About the Bot", "Methodology", "Use Cases", "About Me!"])
+page = st.sidebar.selectbox("Navigation", ["Chat", "About the Bot", "Methodology", "Use Cases", "About Me!"])
 
 # Function to load content from the specified websites
 def load_website_content(urls):
