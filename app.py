@@ -111,6 +111,7 @@ def get_response(user_input, chat_history, website_content):
         prompt = f"""
         You are an AI assistant specialized in Singapore's BTO (Build-To-Order) launches, particularly the October 2024 launch.
         Your role is to provide accurate and helpful information about BTO housing options, application processes, financing, and related topics.
+        Where necessary, use tables to clearly indicate the information.
 
         Here's some context information from the article:
         {website_content}
@@ -122,9 +123,10 @@ def get_response(user_input, chat_history, website_content):
         {sanitized_input}
 
         Your response should follow this structure:
-        1. Direct answer to the query (3-4 sentences)
-        2. Additional relevant information (4-5 sentences, over 2 paragraphs. use bullet points if it's easier to understand)
-        3. {additional_info_message}
+        Direct answer to the query (3-4 sentences)
+        Additional relevant information (4-5 sentences, over 2 paragraphs. use bullet points if it's easier to understand)
+        Add table if necessary
+        {additional_info_message}
         """
     else:
         prompt = f"""
@@ -134,10 +136,10 @@ def get_response(user_input, chat_history, website_content):
         User query: {sanitized_input}
 
         Respond with the following structure:
-        1. Polite acknowledgment that the query is not about BTO or Singapore housing
-        2. Brief explanation of what BTO is
-        3. Suggestion for a BTO-related question the user could ask instead
-        4. {additional_info_message}
+        Polite acknowledgment that the query is not about BTO or Singapore housing
+        Brief explanation of what BTO is
+        Suggestion for a BTO-related question the user could ask instead
+        {additional_info_message}
         """
     
     return get_completion(prompt)
