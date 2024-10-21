@@ -47,21 +47,6 @@ with st.expander("IMPORTANT NOTICE"):
     **Always consult with qualified professionals** for accurate and personalized advice.
     """)
 
-# Page Counter
-st.subheader("Page Counter")
-st.session_state.page_views += 1
-st.write(f"This page has been viewed {st.session_state.page_views} times.")
-
-# Like button
-st.subheader("Like this page!")
-if st.button("👍 Like"):
-    st.session_state.likes += 1
-    st.success("Thank you for liking!")
-
-st.write(f"Total Likes: {st.session_state.likes}")
-
-
-
 # Create a navigation menu with pages
 page = st.sidebar.selectbox("Navigation", ["Chat", "About the Bot", "Methodology", "Use Cases", "About Me!"])
 
@@ -190,8 +175,10 @@ def generate_new_suggestions(current_topic):
             "What are the eligibility criteria for applying for a BTO flat in Singapore?"
         ]
 
-# Page Logic
+st.subheader("Page Counter")
+st.write(f"This page has been viewed {st.session_state.page_views} times.")
 
+# Page Logic
 if page == "Chat":
     st.title("Ask Me Anything About October BTO Bot")
     
@@ -231,6 +218,14 @@ if page == "Chat":
         st.session_state.suggestions = generate_new_suggestions(sanitized_input)
 
         st.rerun()
+
+st.subheader("Like this page!")
+if st.button("👍 Like"):
+    st.session_state.likes += 1
+    st.success("Thank you for liking!")
+
+st.write(f"Total Likes: {st.session_state.likes}")
+
 
 elif page == "About the Bot":
     st.title("About the Bot")
