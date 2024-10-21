@@ -29,7 +29,7 @@ if not check_password():
 
 # Add the disclaimer using st.expander
 with st.expander("IMPORTANT NOTICE"):
-    st.write("""
+    st.write(""" 
     **IMPORTANT NOTICE:** This web application is a prototype developed for educational purposes only.
     The information provided here is **NOT** intended for real-world usage and should not be relied upon for making any decisions,
     especially those related to financial, legal, or healthcare matters.
@@ -42,15 +42,6 @@ with st.expander("IMPORTANT NOTICE"):
 
 # Create a navigation menu with pages
 page = st.sidebar.selectbox("Navigation", ["Chat", "About Us", "Methodology"])
-
-# List of URLs to scrape content from
-urls = [
-    "https://stackedhomes.com/editorial/october-2024-bto-launch-review-ultimate-guide-to-choosing-the-best-unit/#gs.g7fu57",
-    "https://blog.seedly.sg/october-2024-bto/",
-    "https://www.mynicehome.gov.sg/sales-launches/october-2024-sales-launch/",
-    "https://ohmyhome.com/en-sg/blog/upcoming-october-2024-bto-all-you-need-to-know/",
-    "https://www.straitstimes.com/singapore/housing/prime-and-plus-hdb-flats-in-oct-bto-launch-to-come-with-6-to-9-per-cent-subsidy-clawback-clause"
-]
 
 # Function to load content from the specified websites
 def load_website_content(urls):
@@ -66,19 +57,24 @@ def load_website_content(urls):
             st.error(f"Error loading website content from {url}: {str(e)}")
     return ' '.join(content)
 
-st.session_state.content_data = load_website_content()
+# List of URLs to scrape
+urls = [
+    "https://stackedhomes.com/editorial/october-2024-bto-launch-review-ultimate-guide-to-choosing-the-best-unit/#gs.g7fu57",
+    "https://blog.seedly.sg/october-2024-bto/",
+    "https://www.mynicehome.gov.sg/sales-launches/october-2024-sales-launch/",
+    "https://ohmyhome.com/en-sg/blog/upcoming-october-2024-bto-all-you-need-to-know/",
+    "https://www.straitstimes.com/singapore/housing/prime-and-plus-hdb-flats-in-oct-bto-launch-to-come-with-6-to-9-per-cent-subsidy-clawback-clause"
+]
 
-bto_keywords = ["BTO", "Build-To-Order", "application", "process", "flat", "ballot", "housing",
-                "financing", "downpayment", "mortgage", "size", "area", "floor space", "loan", 
-                "HDB loan", "square footage"]
+st.session_state.content_data = load_website_content(urls)
+
+bto_keywords = ["BTO", "Build-To-Order", "application", "process", "flat", "ballot", "housing"]
 
 def classify_topic(user_input, website_content):
     user_input_lower = user_input.lower()
     if any(keyword in user_input_lower for keyword in bto_keywords):
         return "BTO_RELATED"
-    # The rest of your classification logic
-
-
+    
     prompt = f"""
     Classify the following user input as either 'BTO_RELATED' or 'OFF_TOPIC':
     
@@ -92,7 +88,6 @@ def classify_topic(user_input, website_content):
 
 # Access the OpenAI API key
 openai_api_key = st.secrets["general"]["OPENAI_API_KEY"]
-
 
 def sanitize_input(user_input):
     sanitized = re.sub(r'ignore .* prompt', '', user_input, flags=re.IGNORECASE)
@@ -147,7 +142,6 @@ def get_response(user_input, chat_history, website_content):
         """
     
     return get_completion(prompt)
-
 
 def generate_new_suggestions(current_topic):
     prompt = f"""
@@ -216,7 +210,7 @@ if page == "Chat":
 
 elif page == "About Us":
     st.title("About Us")
-    st.write("""
+    st.write(""" 
     ### Project Scope:
     This project is a conversational assistant prototype that focuses on providing users with insights and information about Singapore's Build-To-Order (BTO) housing schemes, particularly the October 2024 launch.
 
@@ -232,24 +226,20 @@ elif page == "About Us":
 
     ### Features:
     - Intelligent chatbot interface
-    - Automated suggestion generation for follow-up questions
-    - Classification of user queries as BTO-related or not
+    - Automated suggestion generation for relevant user queries
     """)
 
 elif page == "Methodology":
     st.title("Methodology")
-    st.write("""
-    ### Data Flow and Implementation:
-    The application leverages multiple technologies and data sources to process user queries. The key components include:
-    
-    - **Chat Interface**: Built with Streamlit for easy interaction.
-    - **Natural Language Processing (NLP)**: Powered by an LLM via LangChain OpenAI for query understanding and generation of responses.
-    - **Content Scraping**: Retrieves up-to-date content from trusted websites to answer BTO-related questions.
+    st.write(""" 
+    The methodology for building this prototype consists of several key components:
 
-    ### Flowchart:
-    The following is an illustration of the workflow for the two primary use cases of the application: 
-    1. User asks a general query
-    2. User asks for BTO-related information
-    """)
+    1. **Data Collection**: Using web scraping techniques to gather data from credible websites related to the October 2024 BTO launch.
     
+    2. **Natural Language Processing**: Employing language models to understand user queries and provide meaningful responses.
+    
+    3. **User Interaction**: Building a user-friendly interface to facilitate conversation and information retrieval.
+
+    4. **Evaluation and Iteration**: Continually evaluating the assistant's performance and making iterative improvements based on user feedback.
+    """)
     st.image("flowchart.png")  # Replace with the path to your flowchart image
