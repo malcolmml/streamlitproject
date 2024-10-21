@@ -171,7 +171,6 @@ def generate_new_suggestions(current_topic):
 # Page Logic
 
 if page == "Chat":
-    st.image("perspective.jpg")
     st.title("Ask Me Anything About October BTO Bot")
     
     
