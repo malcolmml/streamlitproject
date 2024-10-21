@@ -62,7 +62,6 @@ urls = [
     "https://stackedhomes.com/editorial/october-2024-bto-launch-review-ultimate-guide-to-choosing-the-best-unit/#gs.g7fu57",
     "https://blog.seedly.sg/october-2024-bto/",
     "https://www.mynicehome.gov.sg/sales-launches/october-2024-sales-launch/",
-    "https://ohmyhome.com/en-sg/blog/upcoming-october-2024-bto-all-you-need-to-know/",
     "https://www.straitstimes.com/singapore/housing/prime-and-plus-hdb-flats-in-oct-bto-launch-to-come-with-6-to-9-per-cent-subsidy-clawback-clause"
 ]
 
