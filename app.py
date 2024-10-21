@@ -272,7 +272,7 @@ elif page == "Use Cases":
 # Profile Page
 elif page == "About Me!":
     st.title("Malcolm Ang's Profile")
-    st.image("mario.jpg", caption="Malcolm (Zacchaeus) Ang", width=200)
+    st.image("mario.jpg", caption="Malcolm (Zacchaeus) Ang", width=200, use_column_width=False)
 
     # Professional Overview
     st.subheader("Professional Overview")
