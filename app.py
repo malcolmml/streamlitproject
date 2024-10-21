@@ -60,10 +60,10 @@ def load_website_content(urls):
             response = requests.get(url)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
-            paragraphs = [p.get_text() for p in soup.find_all('p')]
-            content.append(' '.join(paragraphs))
+            page_content = [p.get_text() for p in soup.find_all('p')]
+            content.append(' '.join(page_content))
         except Exception as e:
-            st.error(f"Error loading content from {url}: {str(e)}")
+            st.error(f"Error loading website content from {url}: {str(e)}")
     return ' '.join(content)
 
 st.session_state.content_data = load_website_content()
