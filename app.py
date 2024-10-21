@@ -270,7 +270,7 @@ elif page == "Use Cases":
     )
 
 # Profile Page
-elif page == "Profile":
+elif page == "About Me!":
     st.title("Malcolm Ang's Profile")
     st.image("mario.jpg", caption="Malcolm (Zacchaeus) Ang", use_column_width=True)
 
@@ -332,3 +332,5 @@ elif page == "Profile":
     ### Personal Interests
     In my spare time, I enjoy watching Broadway shows. The energy of live performances and the creativity involved in storytelling through music and dance inspire me. I believe that the arts can teach us valuable lessons about collaboration and innovation, principles that I strive to bring into my professional life.
     """)
+
+# git add app.py; git commit -m "remove picture"; git push origin main
