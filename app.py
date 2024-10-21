@@ -41,7 +41,7 @@ with st.expander("IMPORTANT NOTICE"):
     """)
 
 # Create a navigation menu with pages
-page = st.sidebar.selectbox("Navigation", ["Chat", "About Us", "Methodology", "Use Cases"])
+page = st.sidebar.selectbox("Navigation", ["Chat", "About the Bot", "Methodology", "Use Cases", "About Me!"])
 
 # Function to load content from the specified websites
 def load_website_content(urls):
@@ -210,8 +210,8 @@ if page == "Chat":
 
         st.rerun()
 
-elif page == "About Us":
-    st.title("About Us")
+elif page == "About the Bot":
+    st.title("About the Bot")
     st.write(""" 
     ### Project Scope:
     This project is a conversational assistant prototype that focuses on providing users with insights and information about Singapore's Build-To-Order (BTO) housing schemes, particularly the October 2024 launch.
@@ -268,3 +268,67 @@ elif page == "Use Cases":
     Overall, these use cases demonstrate the chatbot's ability to serve as both an informational resource and an engaging conversational partner, tailored to the specific needs of users interested in BTO housing in Singapore.
     """
     )
+
+# Profile Page
+elif page == "Profile":
+    st.title("Malcolm Ang's Profile")
+    st.image("mario.jpg", caption="Malcolm (Zacchaeus) Ang", use_column_width=True)
+
+    # Professional Overview
+    st.subheader("Professional Overview")
+    st.write("""
+    Hello, I'm Malcolm (Zacchaeus) Ang, a recent graduate with a Master of Science in Applied Analytics from Columbia University, and I bring over a decade of experience as a Logistics Officer in the Singapore Armed Forces. My journey in logistics and analytics has been both enriching and transformative, as I've had the opportunity to work on complex supply chain challenges in various capacities.
+    """)
+
+    # Professional Experience
+    st.subheader("Professional Experience")
+    st.write("""
+    ### Singapore Armed Forces
+    As a Logistics Officer for over **10 years**, I have developed expertise in:
+    - **Transportation Management**: Coordinating and optimizing the movement of goods and resources.
+    - **Supply Chain Logistics**: Streamlining processes to enhance efficiency and reduce costs.
+    - **Finance Operations**: Overseeing budgeting and financial planning for logistics initiatives.
+
+    My ability to work collaboratively with diverse teams has allowed me to contribute to mission-critical operations successfully.
+    """)
+
+    # Skills and Certifications
+    st.subheader("Skills and Certifications")
+    st.write("""
+    I have developed a wide range of skills throughout my career, including:
+    - **Data Analytics**: Proficient in using tools like Python, R, and Excel for data analysis.
+    - **Project Management**: Experienced in managing logistics projects from inception to completion.
+    - **Leadership**: Proven track record in leading teams and fostering collaborative environments.
+
+    ### Certifications
+    - **Data Visualization for Data Analysis and Analytics**
+    - **Excel Supply Chain Analysis: Solving Transportation Problems**
+
+    These skills and certifications enhance my ability to deliver results and drive innovation in logistics operations.
+    """)
+
+    # Passion for Innovation
+    st.subheader("Passion for Innovation")
+    st.write("""
+    I am genuinely passionate about leveraging data analytics to drive operational efficiency and strategic decision-making. In today's fast-paced world, effective logistics is crucial not only for military success but also for businesses seeking competitive advantages. I aim to bridge the gap between logistics operations and analytical insights, transforming data into actionable strategies that enhance performance.
+    """)
+
+    # Looking Forward
+    st.subheader("Looking Forward")
+    st.write("""
+    As I embark on the next chapter of my career, I am eager to apply my skills in a dynamic organization that values innovation and growth. I am excited about opportunities to collaborate on projects that challenge the status quo and drive significant impact.
+
+    If you are interested in connecting or discussing potential collaborations, feel free to reach out through my contact information below!
+    """)
+
+    # Contact Information
+    st.subheader("Contact Information")
+    st.write("""
+    - **LinkedIn**: [linkedin.com/in/malcolmzacc](https://www.linkedin.com/in/malcolmzacc)
+    """)
+
+    # Add a personal touch
+    st.write("""
+    ### Personal Interests
+    In my spare time, I enjoy watching Broadway shows. The energy of live performances and the creativity involved in storytelling through music and dance inspire me. I believe that the arts can teach us valuable lessons about collaboration and innovation, principles that I strive to bring into my professional life.
+    """)
