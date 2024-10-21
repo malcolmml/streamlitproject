@@ -20,13 +20,6 @@ if "suggestions" not in st.session_state:
         "How does the BTO application process work?",
     ]
 
-# Initialize session states
-if 'likes' not in st.session_state:
-    st.session_state.likes = 0
-
-if 'page_views' not in st.session_state:
-    st.session_state.page_views = 0
-
 # Streamlit Page Configuration
 st.set_page_config(page_title="Ask Me Anything about October BTO Bot", page_icon="🤔")
 
@@ -175,9 +168,6 @@ def generate_new_suggestions(current_topic):
             "What are the eligibility criteria for applying for a BTO flat in Singapore?"
         ]
 
-st.subheader("Page Counter")
-st.write(f"This page has been viewed {st.session_state.page_views} times.")
-
 # Page Logic
 if page == "Chat":
     st.title("Ask Me Anything About October BTO Bot")
@@ -218,13 +208,6 @@ if page == "Chat":
         st.session_state.suggestions = generate_new_suggestions(sanitized_input)
 
         st.rerun()
-
-st.subheader("Like this page!")
-if st.button("👍 Like"):
-    st.session_state.likes += 1
-    st.success("Thank you for liking!")
-
-st.write(f"Total Likes: {st.session_state.likes}")
 
 
 elif page == "About the Bot":
