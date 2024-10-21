@@ -27,19 +27,6 @@ if 'likes' not in st.session_state:
 if 'page_views' not in st.session_state:
     st.session_state.page_views = 0
 
-# Page Counter
-st.subheader("Page Counter")
-st.session_state.page_views += 1
-st.write(f"This page has been viewed {st.session_state.page_views} times.")
-
-# Like button
-st.subheader("Like this page!")
-if st.button("👍 Like"):
-    st.session_state.likes += 1
-    st.success("Thank you for liking!")
-
-st.write(f"Total Likes: {st.session_state.likes}")
-
 # Streamlit Page Configuration
 st.set_page_config(page_title="Ask Me Anything about October BTO Bot", page_icon="🤔")
 
@@ -59,6 +46,21 @@ with st.expander("IMPORTANT NOTICE"):
 
     **Always consult with qualified professionals** for accurate and personalized advice.
     """)
+
+# Page Counter
+st.subheader("Page Counter")
+st.session_state.page_views += 1
+st.write(f"This page has been viewed {st.session_state.page_views} times.")
+
+# Like button
+st.subheader("Like this page!")
+if st.button("👍 Like"):
+    st.session_state.likes += 1
+    st.success("Thank you for liking!")
+
+st.write(f"Total Likes: {st.session_state.likes}")
+
+
 
 # Create a navigation menu with pages
 page = st.sidebar.selectbox("Navigation", ["Chat", "About the Bot", "Methodology", "Use Cases", "About Me!"])
