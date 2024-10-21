@@ -171,7 +171,9 @@ def generate_new_suggestions(current_topic):
 # Page Logic
 
 if page == "Chat":
+    st.image("perspective.jpg")
     st.title("Ask Me Anything About October BTO Bot")
+    
     
     # Display chat history
     for message in st.session_state.chat_history:
@@ -243,4 +245,27 @@ elif page == "Methodology":
 
     4. **Evaluation and Iteration**: Continually evaluating the assistant's performance and making iterative improvements based on user feedback.
     """)
-    st.image("flowchart.png")  # Replace with the path to your flowchart image
+    st.image("flowchart.png")
+
+elif page == "Use Cases":
+    st.title("Use Cases")
+    st.write("""
+    This chatbot prototype focuses on providing users with information about Singapore's Build-To-Order (BTO) housing schemes, specifically the upcoming October 2024 launch. Here are two clear use cases for this language model (LLM) chatbot:
+
+    **Use Case 1: Information Retrieval and User Guidance**
+    Objective: To provide accurate and timely information about the BTO application process, financing options, and other related queries.
+    Scenario: A user interested in applying for a BTO flat can interact with the chatbot to learn about:
+    The steps involved in the application process.
+    Eligibility criteria for different types of flats.
+    Financial options and subsidies available for BTO applicants.
+    Functionality: The chatbot can deliver concise answers, reference credible sources, and even generate follow-up questions based on the user's input. It can also clarify complex terms and procedures, guiding users through their queries effectively.
+
+    **Use Case 2: User Engagement and Proactive Suggestions**
+    Objective: To enhance user experience by offering relevant suggestions and encouraging further inquiries about BTO-related topics.
+    Scenario: While using the chatbot, a user might express interest in a specific aspect of BTO flats, such as the location of new launches or financing options. The chatbot can:
+    Suggest related questions to explore, keeping the conversation dynamic.
+    Generate new suggestions based on the user's previous interactions and interests.
+    Functionality: This engagement strategy helps maintain user interest, encourages deeper exploration of the topic, and makes the chatbot a valuable tool for potential BTO applicants, providing a more interactive experience.
+    Overall, these use cases demonstrate the chatbot's ability to serve as both an informational resource and an engaging conversational partner, tailored to the specific needs of users interested in BTO housing in Singapore.
+    """
+    )
