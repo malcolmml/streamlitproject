@@ -1,0 +1,41 @@
+[33mcommit 7a64751d7b4e4643eae9d7c9d4e281468d96eb56[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Malcolm Ang <malcolmzacc.ml@gmail.com>
+Date:   Sun Oct 20 22:30:23 2024 +0800
+
+    Add BeautifulSoup to requirements
+
+[33mcommit 6ceb150590e013c853d64b2e076d9ed03ac56bda[m
+Author: Malcolm Ang <malcolmzacc.ml@gmail.com>
+Date:   Sun Oct 20 22:23:10 2024 +0800
+
+    Initial commit
+
+[33mcommit 7916080ce363bdc6715d419986258544790e32e4[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Malcolm Ang <malcolmml@gmail.com>
+Date:   Sun Oct 20 21:54:15 2024 +0800
+
+    Initial commit with app.py, flowchart.png, and utility.py
+
+[33mcommit bc2c8bb684af1a20c081f71ad242fcd04fbc11f3[m
+Author: malcolmml <126811421+malcolmml@users.noreply.github.com>
+Date:   Sun Oct 20 21:49:54 2024 +0800
+
+    Delete utility.py
+
+[33mcommit 0b133cc2757ac53a3b908ec41f90a59e8cc4aac9[m
+Author: malcolmml <126811421+malcolmml@users.noreply.github.com>
+Date:   Sun Oct 20 21:49:43 2024 +0800
+
+    Delete flowchart.png
+
+[33mcommit 7c9a6f0cb51886ee2061d8ecb9434b37b7730eec[m
+Author: malcolmml <126811421+malcolmml@users.noreply.github.com>
+Date:   Sun Oct 20 21:49:32 2024 +0800
+
+    Delete app.py
+
+[33mcommit e52194a99ef81afbd51e9b491b5e2a5f90ba0c8d[m
+Author: malcolmml <126811421+malcolmml@users.noreply.github.com>
+Date:   Sun Oct 20 21:41:26 2024 +0800
+
+    Add files via upload

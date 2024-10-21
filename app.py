@@ -43,22 +43,34 @@ with st.expander("IMPORTANT NOTICE"):
 # Create a navigation menu with pages
 page = st.sidebar.selectbox("Navigation", ["Chat", "About Us", "Methodology"])
 
-# Function to load content from the specified website
-def load_website_content():
-    url = "https://stackedhomes.com/editorial/october-2024-bto-launch-review-ultimate-guide-to-choosing-the-best-unit/#gs.g7fu57"
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.content, 'html.parser')
-        content = [p.get_text() for p in soup.find_all('p')]
-        return ' '.join(content)
-    except Exception as e:
-        st.error(f"Error loading website content: {str(e)}")
-        return None
+# List of URLs to scrape content from
+urls = [
+    "https://stackedhomes.com/editorial/october-2024-bto-launch-review-ultimate-guide-to-choosing-the-best-unit/#gs.g7fu57",
+    "https://blog.seedly.sg/october-2024-bto/",
+    "https://www.mynicehome.gov.sg/sales-launches/october-2024-sales-launch/",
+    "https://ohmyhome.com/en-sg/blog/upcoming-october-2024-bto-all-you-need-to-know/",
+    "https://www.straitstimes.com/singapore/housing/prime-and-plus-hdb-flats-in-oct-bto-launch-to-come-with-6-to-9-per-cent-subsidy-clawback-clause"
+]
+
+# Function to load content from the specified websites
+def load_website_content(urls):
+    content = []
+    for url in urls:
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            paragraphs = [p.get_text() for p in soup.find_all('p')]
+            content.append(' '.join(paragraphs))
+        except Exception as e:
+            st.error(f"Error loading content from {url}: {str(e)}")
+    return ' '.join(content)
 
 st.session_state.content_data = load_website_content()
 
-bto_keywords = ["BTO", "Build-To-Order", "application", "process", "flat", "ballot", "housing"]
+bto_keywords = ["BTO", "Build-To-Order", "application", "process", "flat", "ballot", "housing",
+                "financing", "downpayment", "mortgage", "size", "area", "floor space", "loan", 
+                "HDB loan", "square footage"]
 
 def classify_topic(user_input, website_content):
     user_input_lower = user_input.lower()
